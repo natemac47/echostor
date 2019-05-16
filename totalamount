@@ -1,0 +1,12 @@
+function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+       g_form.setValue('u_total_amount_to_be_awarded', '');
+      return;
+   }
+
+   //Type appropriate comment here, and begin script below
+var d = g_form.getValue('u_subtotal');
+var e = d / 2;
+
+g_form.setValue('u_total_amount_to_be_awarded', e);
+}
