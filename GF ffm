@@ -1,0 +1,13 @@
+function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+       g_form.setValue('u_subtotal', '');
+      return;
+   }
+
+   //Type appropriate comment here, and begin script below
+var e = g_form.getValue('u_amount_of_lowest_logical_fare');
+var d = e;
+
+        
+g_form.setValue('u_subtotal', e);  
+}
