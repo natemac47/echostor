@@ -1,0 +1,14 @@
+function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+       g_form.setValue('u_subtotal', '');
+      return;
+   }
+
+   //Type appropriate comment here, and begin script below
+var a = g_form.getValue('u_business_class_fare');
+var b = g_form.getValue('u_lowest_coach_fare');
+var c = g_form.getValue('u_non_reimbursable');    
+var d = a - b - c;
+    
+g_form.setValue('u_subtotal', d);
+}
