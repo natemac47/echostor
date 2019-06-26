@@ -1,0 +1,10 @@
+	if (g_form.getValue('u_currency') != '' && g_form.getValue('u_lowest_fare') != ''){
+		//get PEG Rate from PEG Rate Currency table to convert variance
+		var tempVariance = g_form.getValue('u_variance'); // value of the variance on the form currently
+		var cType = g_form.getValue('u_currency'); // Sys_id of the currency type selected 
+
+		var ga = new GlideAjax('echoLibrary'); 
+		ga.addParam('sysparm_name', 'pegRateConversion'); // call the function duplicateTicketAlert
+		ga.addParam('sysparm_variance', tempVariance); //pass the caller sys_id as a parm
+		ga.addParam('sysparm_currency_type', cType); //pass the location sys_id as a parm
+		ga.getXML(rateCheck); //run the following function after making the call
